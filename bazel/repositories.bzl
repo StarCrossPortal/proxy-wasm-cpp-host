@@ -65,6 +65,14 @@ def proxy_wasm_cpp_host_repositories():
     )
 
     http_archive(
+        name = "com_github_wasmerio_wasmer",
+        build_file = "@proxy_wasm_cpp_host//bazel/external:wasmer.BUILD",
+        sha256 = "f0d86dcd98882a7459f10e58671acf233b7d00f50dffe32f5770ab3bf850a9a6",
+        strip_prefix = "wasmer-2.0.0",
+        url = "https://github.com/wasmerio/wasmer/archive/2.0.0.tar.gz",
+    )
+
+    http_archive(
         name = "com_github_webassembly_wasm_c_api",
         build_file = "@proxy_wasm_cpp_host//bazel/external:wasm-c-api.BUILD",
         sha256 = "c774044f51431429e878bd1b9e2a4e38932f861f9211df72f75e9427eb6b8d32",
@@ -75,6 +83,11 @@ def proxy_wasm_cpp_host_repositories():
     native.bind(
         name = "wasmtime",
         actual = "@com_github_webassembly_wasm_c_api//:wasmtime_lib",
+    )
+
+    native.bind(
+        name = "wasmer",
+        actual = "@com_github_webassembly_wasm_c_api//:wasmer_lib",
     )
 
     http_archive(

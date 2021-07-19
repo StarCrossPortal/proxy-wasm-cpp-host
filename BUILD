@@ -4,6 +4,7 @@ load(
     "proxy_wasm_select_runtime_v8",
     "proxy_wasm_select_runtime_wamr",
     "proxy_wasm_select_runtime_wasmtime",
+    "proxy_wasm_select_runtime_wasmer",
     "proxy_wasm_select_runtime_wavm",
 )
 
@@ -128,6 +129,21 @@ cc_library(
 )
 
 cc_library(
+    name = "wasmer_lib",
+    srcs = [
+        "src/common/types.h",
+        "src/wasmer/types.h",
+        "src/wasmer/wasmer.cc",
+    ],
+    hdrs = ["include/proxy-wasm/wasmer.h"],
+    defines = ["PROXY_WASM_HAS_RUNTIME_WASMER"],
+    deps = [
+        ":wasm_vm_headers",
+        "//external:wasmer",
+    ],
+)
+
+cc_library(
     name = "wavm_lib",
     srcs = [
         "src/wavm/wavm.cc",
@@ -156,6 +172,8 @@ cc_library(
         [":wamr_lib"],
     ) + proxy_wasm_select_runtime_wasmtime(
         [":wasmtime_lib"],
+    ) + proxy_wasm_select_runtime_wasmer(
+        [":wasmer_lib"],
     ) + proxy_wasm_select_runtime_wavm(
         [":wavm_lib"],
     ),

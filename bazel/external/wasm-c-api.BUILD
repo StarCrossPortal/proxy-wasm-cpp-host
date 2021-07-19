@@ -14,3 +14,14 @@ cc_library(
         "@com_github_bytecodealliance_wasmtime//:rust_c_api",
     ],
 )
+
+cc_library(
+    name = "wasmer_lib",
+    hdrs = [
+        "wasm.h",
+    ],
+    include_prefix = "wasmer",
+    deps = [
+        "@com_github_wasmerio_wasmer//:rust_c_api",
+    ],
+)

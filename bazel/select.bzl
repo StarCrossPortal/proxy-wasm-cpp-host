@@ -30,6 +30,12 @@ def proxy_wasm_select_runtime_wasmtime(xs):
         "//conditions:default": [],
     })
 
+def proxy_wasm_select_runtime_wasmer(xs):
+    return select({
+        "@proxy_wasm_cpp_host//bazel:runtime_wasmer": xs,
+        "//conditions:default": [],
+    })
+
 def proxy_wasm_select_runtime_wavm(xs):
     return select({
         "@proxy_wasm_cpp_host//bazel:runtime_wavm": xs,

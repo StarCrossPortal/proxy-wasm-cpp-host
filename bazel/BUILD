@@ -14,6 +14,11 @@ config_setting(
 )
 
 config_setting(
+    name = "runtime_wasmer",
+    values = {"define": "runtime=wasmer"},
+)
+
+config_setting(
     name = "runtime_wavm",
     values = {"define": "runtime=wavm"},
 )
