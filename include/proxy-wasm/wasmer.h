@@ -18,6 +18,6 @@
 
 namespace proxy_wasm {
 
-std::unique_ptr<WasmVm> createWasmtimeVm();
+std::unique_ptr<WasmVm> createWasmerVm();
 
 } // namespace proxy_wasm
