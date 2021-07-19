@@ -22,6 +22,24 @@ alias(
 )
 
 alias(
+    name = "cfg_if",
+    actual = "@proxy_wasm_cpp_host__cfg_if__1_0_0//:cfg_if",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "enumset",
+    actual = "@proxy_wasm_cpp_host__enumset__1_0_7//:enumset",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "env_logger",
     actual = "@proxy_wasm_cpp_host__env_logger__0_8_3//:env_logger",
     tags = [
@@ -31,8 +49,170 @@ alias(
 )
 
 alias(
+    name = "lazy_static",
+    actual = "@proxy_wasm_cpp_host__lazy_static__1_4_0//:lazy_static",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "libc",
+    actual = "@proxy_wasm_cpp_host__libc__0_2_94//:libc",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "once_cell",
     actual = "@proxy_wasm_cpp_host__once_cell__1_7_2//:once_cell",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "paste",
+    actual = "@proxy_wasm_cpp_host__paste__1_0_5//:paste",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "serde",
+    actual = "@proxy_wasm_cpp_host__serde__1_0_126//:serde",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "thiserror",
+    actual = "@proxy_wasm_cpp_host__thiserror__1_0_24//:thiserror",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "typetag",
+    actual = "@proxy_wasm_cpp_host__typetag__0_1_7//:typetag",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer",
+    actual = "@proxy_wasm_cpp_host__wasmer__2_0_0//:wasmer",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_compiler_cranelift",
+    actual = "@proxy_wasm_cpp_host__wasmer_compiler_cranelift__2_0_0//:wasmer_compiler_cranelift",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_compiler_llvm",
+    actual = "@proxy_wasm_cpp_host__wasmer_compiler_llvm__2_0_0//:wasmer_compiler_llvm",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_compiler_singlepass",
+    actual = "@proxy_wasm_cpp_host__wasmer_compiler_singlepass__2_0_0//:wasmer_compiler_singlepass",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_emscripten",
+    actual = "@proxy_wasm_cpp_host__wasmer_emscripten__2_0_0//:wasmer_emscripten",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_engine",
+    actual = "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_engine_dylib",
+    actual = "@proxy_wasm_cpp_host__wasmer_engine_dylib__2_0_0//:wasmer_engine_dylib",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_engine_staticlib",
+    actual = "@proxy_wasm_cpp_host__wasmer_engine_staticlib__2_0_0//:wasmer_engine_staticlib",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_engine_universal",
+    actual = "@proxy_wasm_cpp_host__wasmer_engine_universal__2_0_0//:wasmer_engine_universal",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_middlewares",
+    actual = "@proxy_wasm_cpp_host__wasmer_middlewares__2_0_0//:wasmer_middlewares",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_types",
+    actual = "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "wasmer_wasi",
+    actual = "@proxy_wasm_cpp_host__wasmer_wasi__2_0_0//:wasmer_wasi",
     tags = [
         "cargo-raze",
         "manual",

@@ -30,31 +30,15 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "bench" with type "bench" omitted
-
-# Unsupported target "dwarf-validate" with type "example" omitted
-
-# Unsupported target "dwarfdump" with type "example" omitted
-
-# Unsupported target "simple" with type "example" omitted
-
-# Unsupported target "simple_line" with type "example" omitted
+# Unsupported target "example" with type "example" omitted
 
 rust_library(
-    name = "gimli",
+    name = "ctor",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "default",
-        "endian-reader",
-        "fallible-iterator",
-        "indexmap",
-        "read",
-        "stable_deref_trait",
-        "std",
-        "write",
     ],
     crate_root = "src/lib.rs",
-    crate_type = "lib",
+    crate_type = "proc-macro",
     data = [],
     edition = "2018",
     rustc_flags = [
@@ -64,15 +48,10 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.24.0",
+    version = "0.1.20",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__fallible_iterator__0_2_0//:fallible_iterator",
-        "@proxy_wasm_cpp_host__indexmap__1_6_2//:indexmap",
-        "@proxy_wasm_cpp_host__stable_deref_trait__1_2_0//:stable_deref_trait",
+        "@proxy_wasm_cpp_host__quote__1_0_9//:quote",
+        "@proxy_wasm_cpp_host__syn__1_0_72//:syn",
     ],
 )
-
-# Unsupported target "convert_self" with type "test" omitted
-
-# Unsupported target "parse_self" with type "test" omitted

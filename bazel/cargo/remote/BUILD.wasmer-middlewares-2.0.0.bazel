@@ -30,23 +30,12 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "bench" with type "bench" omitted
-
 rust_library(
-    name = "regex_syntax",
+    name = "wasmer_middlewares",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "default",
-        "unicode",
-        "unicode-age",
-        "unicode-bool",
-        "unicode-case",
-        "unicode-gencat",
-        "unicode-perl",
-        "unicode-script",
-        "unicode-segment",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/middlewares/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
@@ -57,8 +46,12 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.6.25",
+    version = "2.0.0",
     # buildifier: leave-alone
     deps = [
+        "@proxy_wasm_cpp_host__loupe__0_1_3//:loupe",
+        "@proxy_wasm_cpp_host__wasmer__2_0_0//:wasmer",
+        "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
+        "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
     ],
 )

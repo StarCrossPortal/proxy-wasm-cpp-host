@@ -1,0 +1,92 @@
+"""
+@generated
+cargo-raze crate build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+# buildifier: disable=load
+load(
+    "@rules_rust//rust:rust.bzl",
+    "rust_binary",
+    "rust_library",
+    "rust_test",
+)
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//bazel/cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT"
+])
+
+# Generated Targets
+
+rust_library(
+    name = "wasmer",
+    srcs = glob(["**/*.rs"]),
+    aliases = {
+    },
+    crate_features = [
+        "compiler",
+        "wasmer-engine-dylib",
+        "wasmer-engine-universal",
+    ],
+    crate_root = "lib/api/src/lib.rs",
+    crate_type = "lib",
+    data = [],
+    edition = "2018",
+    proc_macro_deps = [
+        "@proxy_wasm_cpp_host__wasmer_derive__2_0_0//:wasmer_derive",
+    ],
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+    version = "2.0.0",
+    # buildifier: leave-alone
+    deps = [
+        "@proxy_wasm_cpp_host__cfg_if__1_0_0//:cfg_if",
+        "@proxy_wasm_cpp_host__indexmap__1_6_2//:indexmap",
+        "@proxy_wasm_cpp_host__loupe__0_1_3//:loupe",
+        "@proxy_wasm_cpp_host__more_asserts__0_2_1//:more_asserts",
+        "@proxy_wasm_cpp_host__target_lexicon__0_12_0//:target_lexicon",
+        "@proxy_wasm_cpp_host__thiserror__1_0_24//:thiserror",
+        "@proxy_wasm_cpp_host__wasmer_compiler__2_0_0//:wasmer_compiler",
+        "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
+        "@proxy_wasm_cpp_host__wasmer_engine_dylib__2_0_0//:wasmer_engine_dylib",
+        "@proxy_wasm_cpp_host__wasmer_engine_universal__2_0_0//:wasmer_engine_universal",
+        "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
+        "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
+    ] + selects.with_or({
+        # cfg(target_os = "windows")
+        (
+            "@rules_rust//rust/platform:i686-pc-windows-msvc",
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+        ): [
+            "@proxy_wasm_cpp_host__winapi__0_3_9//:winapi",
+        ],
+        "//conditions:default": [],
+    }),
+)
+
+# Unsupported target "export" with type "test" omitted
+
+# Unsupported target "externals" with type "test" omitted
+
+# Unsupported target "instance" with type "test" omitted
+
+# Unsupported target "module" with type "test" omitted
+
+# Unsupported target "reference_types" with type "test" omitted

@@ -25,28 +25,19 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
 
-# Unsupported target "bench" with type "bench" omitted
-
 rust_library(
-    name = "regex_syntax",
+    name = "wasmer_emscripten",
     srcs = glob(["**/*.rs"]),
+    aliases = {
+    },
     crate_features = [
-        "default",
-        "unicode",
-        "unicode-age",
-        "unicode-bool",
-        "unicode-case",
-        "unicode-gencat",
-        "unicode-perl",
-        "unicode-script",
-        "unicode-segment",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/emscripten/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
@@ -57,8 +48,23 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.6.25",
+    version = "2.0.0",
     # buildifier: leave-alone
     deps = [
-    ],
+        "@proxy_wasm_cpp_host__byteorder__1_4_3//:byteorder",
+        "@proxy_wasm_cpp_host__lazy_static__1_4_0//:lazy_static",
+        "@proxy_wasm_cpp_host__libc__0_2_94//:libc",
+        "@proxy_wasm_cpp_host__log__0_4_14//:log",
+        "@proxy_wasm_cpp_host__time__0_1_43//:time",
+        "@proxy_wasm_cpp_host__wasmer__2_0_0//:wasmer",
+    ] + selects.with_or({
+        # cfg(windows)
+        (
+            "@rules_rust//rust/platform:i686-pc-windows-msvc",
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+        ): [
+            "@proxy_wasm_cpp_host__getrandom__0_2_2//:getrandom",
+        ],
+        "//conditions:default": [],
+    }),
 )

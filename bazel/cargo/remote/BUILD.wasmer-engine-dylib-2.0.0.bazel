@@ -1,0 +1,68 @@
+"""
+@generated
+cargo-raze crate build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+# buildifier: disable=load
+load(
+    "@rules_rust//rust:rust.bzl",
+    "rust_binary",
+    "rust_library",
+    "rust_test",
+)
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//bazel/cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT"
+])
+
+# Generated Targets
+
+rust_library(
+    name = "wasmer_engine_dylib",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "compiler",
+    ],
+    crate_root = "lib/engine-dylib/src/lib.rs",
+    crate_type = "lib",
+    data = [],
+    edition = "2018",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+    version = "2.0.0",
+    # buildifier: leave-alone
+    deps = [
+        "@proxy_wasm_cpp_host__cfg_if__1_0_0//:cfg_if",
+        "@proxy_wasm_cpp_host__leb128__0_2_4//:leb128",
+        "@proxy_wasm_cpp_host__libloading__0_7_0//:libloading",
+        "@proxy_wasm_cpp_host__loupe__0_1_3//:loupe",
+        "@proxy_wasm_cpp_host__rkyv__0_6_7//:rkyv",
+        "@proxy_wasm_cpp_host__serde__1_0_126//:serde",
+        "@proxy_wasm_cpp_host__tempfile__3_2_0//:tempfile",
+        "@proxy_wasm_cpp_host__tracing__0_1_26//:tracing",
+        "@proxy_wasm_cpp_host__wasmer_compiler__2_0_0//:wasmer_compiler",
+        "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
+        "@proxy_wasm_cpp_host__wasmer_object__2_0_0//:wasmer_object",
+        "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
+        "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
+        "@proxy_wasm_cpp_host__which__4_1_0//:which",
+    ],
+)

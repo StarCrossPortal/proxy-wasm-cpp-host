@@ -25,28 +25,17 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
 
-# Unsupported target "bench" with type "bench" omitted
-
 rust_library(
-    name = "regex_syntax",
+    name = "wasmer_object",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "default",
-        "unicode",
-        "unicode-age",
-        "unicode-bool",
-        "unicode-case",
-        "unicode-gencat",
-        "unicode-perl",
-        "unicode-script",
-        "unicode-segment",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/object/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
@@ -57,8 +46,12 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.6.25",
+    version = "2.0.0",
     # buildifier: leave-alone
     deps = [
+        "@proxy_wasm_cpp_host__object__0_25_3//:object",
+        "@proxy_wasm_cpp_host__thiserror__1_0_24//:thiserror",
+        "@proxy_wasm_cpp_host__wasmer_compiler__2_0_0//:wasmer_compiler",
+        "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
     ],
 )

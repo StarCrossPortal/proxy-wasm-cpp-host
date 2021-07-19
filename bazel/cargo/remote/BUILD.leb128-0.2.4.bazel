@@ -32,31 +32,16 @@ licenses([
 
 # Unsupported target "bench" with type "bench" omitted
 
-# Unsupported target "dwarf-validate" with type "example" omitted
-
-# Unsupported target "dwarfdump" with type "example" omitted
-
-# Unsupported target "simple" with type "example" omitted
-
-# Unsupported target "simple_line" with type "example" omitted
-
-rust_library(
-    name = "gimli",
+rust_binary(
+    # Prefix bin name to disambiguate from (probable) collision with lib name
+    # N.B.: The exact form of this is subject to change.
+    name = "cargo_bin_leb128_repl",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "default",
-        "endian-reader",
-        "fallible-iterator",
-        "indexmap",
-        "read",
-        "stable_deref_trait",
-        "std",
-        "write",
     ],
-    crate_root = "src/lib.rs",
-    crate_type = "lib",
+    crate_root = "src/bin/leb128-repl.rs",
     data = [],
-    edition = "2018",
+    edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -64,15 +49,33 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.24.0",
+    version = "0.2.4",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__fallible_iterator__0_2_0//:fallible_iterator",
-        "@proxy_wasm_cpp_host__indexmap__1_6_2//:indexmap",
-        "@proxy_wasm_cpp_host__stable_deref_trait__1_2_0//:stable_deref_trait",
+        ":leb128",
     ],
 )
 
-# Unsupported target "convert_self" with type "test" omitted
+rust_library(
+    name = "leb128",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+    ],
+    crate_root = "src/lib.rs",
+    crate_type = "lib",
+    data = [],
+    edition = "2015",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+    version = "0.2.4",
+    # buildifier: leave-alone
+    deps = [
+    ],
+)
 
-# Unsupported target "parse_self" with type "test" omitted
+# Unsupported target "quickchecks" with type "test" omitted
