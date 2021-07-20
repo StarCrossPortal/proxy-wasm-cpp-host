@@ -21,6 +21,7 @@ rust_library(
     crate_type = "staticlib",
     edition = "2018",
     deps = [
+        ":helpers_lib",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer-compiler-cranelift",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer-compiler-singlepass",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer-compiler-llvm",
