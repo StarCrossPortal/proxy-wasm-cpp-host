@@ -41,8 +41,10 @@ rust_library(
         "serde",
         "serde_bytes",
         "std",
+        "translator",
+        "wasmparser",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/compiler/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
@@ -66,5 +68,6 @@ rust_library(
         "@proxy_wasm_cpp_host__thiserror__1_0_24//:thiserror",
         "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
         "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
+        "@proxy_wasm_cpp_host__wasmparser__0_78_2//:wasmparser",
     ],
 )

@@ -41,7 +41,7 @@ rust_library(
         "serde",
         "std",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/types/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
