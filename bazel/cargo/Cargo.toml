@@ -16,8 +16,6 @@ wasmtime-c-api-macros = { git = "https://github.com/bytecodealliance/wasmtime", 
 wasmsign = { git = "https://github.com/jedisct1/wasmsign", revision = "fa4d5598f778390df09be94232972b5b865a56b8" }
 #wasmer
 wasmer-api = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/api", default-features = false, package = "wasmer" }
-wasmer-compiler-cranelift = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/compiler-cranelift" }
-wasmer-compiler-singlepass = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/compiler-singlepass" }
 wasmer-compiler-llvm = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/compiler-llvm" }
 wasmer-emscripten = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/emscripten" }
 wasmer-engine = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/engine" }

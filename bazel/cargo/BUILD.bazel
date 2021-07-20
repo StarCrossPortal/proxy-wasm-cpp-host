@@ -121,26 +121,8 @@ alias(
 )
 
 alias(
-    name = "wasmer_compiler_cranelift",
-    actual = "@proxy_wasm_cpp_host__wasmer_compiler_cranelift__2_0_0//:wasmer_compiler_cranelift",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
     name = "wasmer_compiler_llvm",
     actual = "@proxy_wasm_cpp_host__wasmer_compiler_llvm__2_0_0//:wasmer_compiler_llvm",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
-    name = "wasmer_compiler_singlepass",
-    actual = "@proxy_wasm_cpp_host__wasmer_compiler_singlepass__2_0_0//:wasmer_compiler_singlepass",
     tags = [
         "cargo-raze",
         "manual",
