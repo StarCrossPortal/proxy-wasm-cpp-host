@@ -25,7 +25,7 @@ rust_library(
     ],
     deps = [
         ":helpers_lib",
-        "@proxy_wasm_cpp_host//bazel/cargo:wasmer-compiler-llvm",
+        "@proxy_wasm_cpp_host//bazel/cargo:wasmer_compiler_llvm",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer_engine",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer_engine_universal",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer_types",
