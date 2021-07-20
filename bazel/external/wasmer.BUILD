@@ -26,13 +26,12 @@ rust_library(
     deps = [
         ":helpers_lib",
         "@proxy_wasm_cpp_host//bazel/cargo:enumset",
-        "@proxy_wasm_cpp_host//bazel/cargo:cfg-if",
+        "@proxy_wasm_cpp_host//bazel/cargo:cfg_if",
         "@proxy_wasm_cpp_host//bazel/cargo:lazy_static",
         "@proxy_wasm_cpp_host//bazel/cargo:libc",
         "@proxy_wasm_cpp_host//bazel/cargo:serde",
         "@proxy_wasm_cpp_host//bazel/cargo:thiserror",
         "@proxy_wasm_cpp_host//bazel/cargo:typetag",
-        "@proxy_wasm_cpp_host//bazel/cargo:paste",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmer",
     ],
 )
