@@ -1452,12 +1452,30 @@ def proxy_wasm_cpp_host_fetch_remote_crates():
     )
 
     maybe(
+        http_archive,
+        name = "proxy_wasm_cpp_host__wasmer__2_0_0",
+        url = "https://crates.io/api/v1/crates/wasmer/2.0.0/download",
+        type = "tar.gz",
+        strip_prefix = "wasmer-2.0.0",
+        build_file = Label("//bazel/cargo/remote:BUILD.wasmer-2.0.0.bazel"),
+    )
+
+    maybe(
         new_git_repository,
         name = "proxy_wasm_cpp_host__wasmer_compiler__2_0_0",
         remote = "https://github.com/wasmerio/wasmer",
         commit = "327192c2aece56beefbe0583ba0b2ec230c7be18",
         build_file = Label("//bazel/cargo/remote:BUILD.wasmer-compiler-2.0.0.bazel"),
         init_submodules = True,
+    )
+
+    maybe(
+        http_archive,
+        name = "proxy_wasm_cpp_host__wasmer_compiler__2_0_0",
+        url = "https://crates.io/api/v1/crates/wasmer-compiler/2.0.0/download",
+        type = "tar.gz",
+        strip_prefix = "wasmer-compiler-2.0.0",
+        build_file = Label("//bazel/cargo/remote:BUILD.wasmer-compiler-2.0.0.bazel"),
     )
 
     maybe(
@@ -1488,6 +1506,15 @@ def proxy_wasm_cpp_host_fetch_remote_crates():
     )
 
     maybe(
+        http_archive,
+        name = "proxy_wasm_cpp_host__wasmer_derive__2_0_0",
+        url = "https://crates.io/api/v1/crates/wasmer-derive/2.0.0/download",
+        type = "tar.gz",
+        strip_prefix = "wasmer-derive-2.0.0",
+        build_file = Label("//bazel/cargo/remote:BUILD.wasmer-derive-2.0.0.bazel"),
+    )
+
+    maybe(
         new_git_repository,
         name = "proxy_wasm_cpp_host__wasmer_emscripten__2_0_0",
         remote = "https://github.com/wasmerio/wasmer",
@@ -1503,6 +1530,15 @@ def proxy_wasm_cpp_host_fetch_remote_crates():
         commit = "327192c2aece56beefbe0583ba0b2ec230c7be18",
         build_file = Label("//bazel/cargo/remote:BUILD.wasmer-engine-2.0.0.bazel"),
         init_submodules = True,
+    )
+
+    maybe(
+        http_archive,
+        name = "proxy_wasm_cpp_host__wasmer_engine__2_0_0",
+        url = "https://crates.io/api/v1/crates/wasmer-engine/2.0.0/download",
+        type = "tar.gz",
+        strip_prefix = "wasmer-engine-2.0.0",
+        build_file = Label("//bazel/cargo/remote:BUILD.wasmer-engine-2.0.0.bazel"),
     )
 
     maybe(
@@ -1560,12 +1596,30 @@ def proxy_wasm_cpp_host_fetch_remote_crates():
     )
 
     maybe(
+        http_archive,
+        name = "proxy_wasm_cpp_host__wasmer_types__2_0_0",
+        url = "https://crates.io/api/v1/crates/wasmer-types/2.0.0/download",
+        type = "tar.gz",
+        strip_prefix = "wasmer-types-2.0.0",
+        build_file = Label("//bazel/cargo/remote:BUILD.wasmer-types-2.0.0.bazel"),
+    )
+
+    maybe(
         new_git_repository,
         name = "proxy_wasm_cpp_host__wasmer_vm__2_0_0",
         remote = "https://github.com/wasmerio/wasmer",
         commit = "327192c2aece56beefbe0583ba0b2ec230c7be18",
         build_file = Label("//bazel/cargo/remote:BUILD.wasmer-vm-2.0.0.bazel"),
         init_submodules = True,
+    )
+
+    maybe(
+        http_archive,
+        name = "proxy_wasm_cpp_host__wasmer_vm__2_0_0",
+        url = "https://crates.io/api/v1/crates/wasmer-vm/2.0.0/download",
+        type = "tar.gz",
+        strip_prefix = "wasmer-vm-2.0.0",
+        build_file = Label("//bazel/cargo/remote:BUILD.wasmer-vm-2.0.0.bazel"),
     )
 
     maybe(

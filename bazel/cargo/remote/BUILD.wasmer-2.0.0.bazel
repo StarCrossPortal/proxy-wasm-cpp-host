@@ -36,21 +36,8 @@ rust_library(
     aliases = {
     },
     crate_features = [
-        "compiler",
-        "cranelift",
-        "default",
-        "default-compiler",
-        "default-cranelift",
-        "default-engine",
-        "default-universal",
-        "engine",
-        "universal",
-        "wasmer-compiler-cranelift",
-        "wasmer-engine-dylib",
-        "wasmer-engine-universal",
-        "wat",
     ],
-    crate_root = "lib/api/src/lib.rs",
+    crate_root = "src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
@@ -74,13 +61,9 @@ rust_library(
         "@proxy_wasm_cpp_host__target_lexicon__0_12_0//:target_lexicon",
         "@proxy_wasm_cpp_host__thiserror__1_0_24//:thiserror",
         "@proxy_wasm_cpp_host__wasmer_compiler__2_0_0//:wasmer_compiler",
-        "@proxy_wasm_cpp_host__wasmer_compiler_cranelift__2_0_0//:wasmer_compiler_cranelift",
         "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
-        "@proxy_wasm_cpp_host__wasmer_engine_dylib__2_0_0//:wasmer_engine_dylib",
-        "@proxy_wasm_cpp_host__wasmer_engine_universal__2_0_0//:wasmer_engine_universal",
         "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
         "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
-        "@proxy_wasm_cpp_host__wat__1_0_38//:wat",
     ] + selects.with_or({
         # cfg(target_os = "windows")
         (
