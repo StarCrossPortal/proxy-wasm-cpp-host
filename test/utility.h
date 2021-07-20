@@ -32,6 +32,9 @@
 #if defined(PROXY_WASM_HAS_RUNTIME_WASMTIME)
 #include "include/proxy-wasm/wasmtime.h"
 #endif
+#if defined(PROXY_WASM_HAS_RUNTIME_WASMER)
+#include "include/proxy-wasm/wasmer.h"
+#endif
 #if defined(PROXY_WASM_HAS_RUNTIME_WAMR)
 #include "include/proxy-wasm/wamr.h"
 #endif
