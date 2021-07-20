@@ -193,6 +193,15 @@ alias(
 )
 
 alias(
+    name = "wasmer_vm",
+    actual = "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "wasmer_wasi",
     actual = "@proxy_wasm_cpp_host__wasmer_wasi__2_0_0//:wasmer_wasi",
     tags = [
