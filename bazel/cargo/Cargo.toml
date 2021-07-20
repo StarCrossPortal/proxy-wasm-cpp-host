@@ -15,16 +15,12 @@ wasmtime = { version = "0.26.0", default-features = false }
 wasmtime-c-api-macros = { git = "https://github.com/bytecodealliance/wasmtime", tag = "v0.26.0", path = "crates/c-api/macros" }
 wasmsign = { git = "https://github.com/jedisct1/wasmsign", revision = "fa4d5598f778390df09be94232972b5b865a56b8" }
 #wasmer
-wasmer = { version = "2.0.0", default-features = false }
-#wasmer-compiler-llvm = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/compiler-llvm" }
-#wasmer-emscripten = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/emscripten" }
-#wasmer-engine = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/engine" }
-#wasmer-engine-universal = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/engine-universal" }
-#wasmer-engine-dylib = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/engine-dylib" }
-#wasmer-engine-staticlib = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/engine-staticlib" }
-#wasmer-middlewares = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/middlewares" }
-#wasmer-wasi = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/wasi" }
-#wasmer-types = { git = "https://github.com/wasmerio/wasmer", tag = "2.0.0", path = "lib/types" }
+wasmer-api = { version = "2.0.0", features = ["llvm"], package = "wasmer" }
+wasmer-compiler-llvm = "2.0.0"
+wasmer-engine = "2.0.0"
+wasmer-engine-universal = "2.0.0"
+wasmer-middlewares = "2.0.0"
+wasmer-types = "2.0.0"
 enumset = "1.0"
 cfg-if = "1.0"
 lazy_static = "1.4"
