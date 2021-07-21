@@ -31,18 +31,14 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "wasmer_compiler",
+    name = "wasmer_engine_universal",
     srcs = glob(["**/*.rs"]),
+    aliases = {
+    },
     crate_features = [
-        "default",
-        "enable-rkyv",
-        "enable-serde",
-        "rkyv",
-        "serde",
-        "serde_bytes",
-        "std",
+        "compiler",
     ],
-    crate_root = "lib/compiler/src/lib.rs",
+    crate_root = "src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",
@@ -56,15 +52,23 @@ rust_library(
     version = "2.0.0",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__enumset__1_0_7//:enumset",
+        "@proxy_wasm_cpp_host__cfg_if__1_0_0//:cfg_if",
+        "@proxy_wasm_cpp_host__leb128__0_2_4//:leb128",
         "@proxy_wasm_cpp_host__loupe__0_1_3//:loupe",
+        "@proxy_wasm_cpp_host__region__2_2_0//:region",
         "@proxy_wasm_cpp_host__rkyv__0_6_7//:rkyv",
-        "@proxy_wasm_cpp_host__serde__1_0_126//:serde",
-        "@proxy_wasm_cpp_host__serde_bytes__0_11_5//:serde_bytes",
-        "@proxy_wasm_cpp_host__smallvec__1_6_1//:smallvec",
-        "@proxy_wasm_cpp_host__target_lexicon__0_12_0//:target_lexicon",
-        "@proxy_wasm_cpp_host__thiserror__1_0_24//:thiserror",
+        "@proxy_wasm_cpp_host__wasmer_compiler__2_0_0//:wasmer_compiler",
+        "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
         "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
         "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
-    ],
+    ] + selects.with_or({
+        # cfg(target_os = "windows")
+        (
+            "@rules_rust//rust/platform:i686-pc-windows-msvc",
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+        ): [
+            "@proxy_wasm_cpp_host__winapi__0_3_9//:winapi",
+        ],
+        "//conditions:default": [],
+    }),
 )

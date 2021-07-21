@@ -31,7 +31,7 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "wasmer_derive",
+    name = "tracing_attributes",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
@@ -46,16 +46,29 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "2.0.0",
+    version = "0.1.15",
     # buildifier: leave-alone
     deps = [
         "@proxy_wasm_cpp_host__proc_macro2__1_0_26//:proc_macro2",
-        "@proxy_wasm_cpp_host__proc_macro_error__1_0_4//:proc_macro_error",
         "@proxy_wasm_cpp_host__quote__1_0_9//:quote",
         "@proxy_wasm_cpp_host__syn__1_0_72//:syn",
     ],
 )
 
-# Unsupported target "basic" with type "test" omitted
+# Unsupported target "async_fn" with type "test" omitted
 
-# Unsupported target "compiletest" with type "test" omitted
+# Unsupported target "destructuring" with type "test" omitted
+
+# Unsupported target "err" with type "test" omitted
+
+# Unsupported target "fields" with type "test" omitted
+
+# Unsupported target "instrument" with type "test" omitted
+
+# Unsupported target "levels" with type "test" omitted
+
+# Unsupported target "names" with type "test" omitted
+
+# Unsupported target "support" with type "test" omitted
+
+# Unsupported target "targets" with type "test" omitted

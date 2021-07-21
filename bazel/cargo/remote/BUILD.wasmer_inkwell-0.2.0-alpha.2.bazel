@@ -25,7 +25,7 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
@@ -37,36 +37,19 @@ load(
 )
 
 cargo_build_script(
-    name = "winapi_build_script",
+    name = "wasmer_inkwell_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
     crate_features = [
-        "basetsd",
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "impl-default",
-        "libloaderapi",
-        "memoryapi",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntstatus",
-        "processenv",
-        "profileapi",
-        "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
+        "llvm-sys-110",
+        "llvm11-0",
+        "target-aarch64",
+        "target-x86",
     ],
     crate_root = "build.rs",
     data = glob(["**"]),
-    edition = "2015",
+    edition = "2018",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -74,42 +57,33 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.3.9",
+    version = "0.2.0-alpha.2",
     visibility = ["//visibility:private"],
     deps = [
+        "@proxy_wasm_cpp_host__llvm_sys__110_0_1//:llvm_sys",
     ],
 )
 
+# Unsupported target "jit" with type "example" omitted
+
+# Unsupported target "kaleidoscope" with type "example" omitted
+
 rust_library(
-    name = "winapi",
+    name = "wasmer_inkwell",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "basetsd",
-        "consoleapi",
-        "errhandlingapi",
-        "fileapi",
-        "handleapi",
-        "impl-default",
-        "libloaderapi",
-        "memoryapi",
-        "minwinbase",
-        "minwindef",
-        "ntdef",
-        "ntstatus",
-        "processenv",
-        "profileapi",
-        "std",
-        "sysinfoapi",
-        "timezoneapi",
-        "winbase",
-        "wincon",
-        "winerror",
-        "winnt",
+        "llvm-sys-110",
+        "llvm11-0",
+        "target-aarch64",
+        "target-x86",
     ],
     crate_root = "src/lib.rs",
     crate_type = "lib",
     data = [],
-    edition = "2015",
+    edition = "2018",
+    proc_macro_deps = [
+        "@proxy_wasm_cpp_host__inkwell_internals__0_3_0//:inkwell_internals",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -117,9 +91,17 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.3.9",
+    version = "0.2.0-alpha.2",
     # buildifier: leave-alone
     deps = [
-        ":winapi_build_script",
+        ":wasmer_inkwell_build_script",
+        "@proxy_wasm_cpp_host__either__1_6_1//:either",
+        "@proxy_wasm_cpp_host__libc__0_2_94//:libc",
+        "@proxy_wasm_cpp_host__llvm_sys__110_0_1//:llvm_sys",
+        "@proxy_wasm_cpp_host__once_cell__1_7_2//:once_cell",
+        "@proxy_wasm_cpp_host__parking_lot__0_11_1//:parking_lot",
+        "@proxy_wasm_cpp_host__regex__1_5_4//:regex",
     ],
 )
+
+# Unsupported target "all" with type "test" omitted

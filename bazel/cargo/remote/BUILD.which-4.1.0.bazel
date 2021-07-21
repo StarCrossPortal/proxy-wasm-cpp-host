@@ -31,12 +31,12 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "wasmer_derive",
+    name = "which",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
     crate_root = "src/lib.rs",
-    crate_type = "proc-macro",
+    crate_type = "lib",
     data = [],
     edition = "2018",
     rustc_flags = [
@@ -46,16 +46,12 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "2.0.0",
+    version = "4.1.0",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__proc_macro2__1_0_26//:proc_macro2",
-        "@proxy_wasm_cpp_host__proc_macro_error__1_0_4//:proc_macro_error",
-        "@proxy_wasm_cpp_host__quote__1_0_9//:quote",
-        "@proxy_wasm_cpp_host__syn__1_0_72//:syn",
+        "@proxy_wasm_cpp_host__either__1_6_1//:either",
+        "@proxy_wasm_cpp_host__libc__0_2_94//:libc",
     ],
 )
 
 # Unsupported target "basic" with type "test" omitted
-
-# Unsupported target "compiletest" with type "test" omitted

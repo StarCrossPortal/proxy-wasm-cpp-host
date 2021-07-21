@@ -25,13 +25,13 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
 
 rust_library(
-    name = "wasmer_derive",
+    name = "inkwell_internals",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
@@ -46,16 +46,11 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "2.0.0",
+    version = "0.3.0",
     # buildifier: leave-alone
     deps = [
         "@proxy_wasm_cpp_host__proc_macro2__1_0_26//:proc_macro2",
-        "@proxy_wasm_cpp_host__proc_macro_error__1_0_4//:proc_macro_error",
         "@proxy_wasm_cpp_host__quote__1_0_9//:quote",
         "@proxy_wasm_cpp_host__syn__1_0_72//:syn",
     ],
 )
-
-# Unsupported target "basic" with type "test" omitted
-
-# Unsupported target "compiletest" with type "test" omitted

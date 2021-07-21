@@ -31,12 +31,14 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "wasmer_derive",
+    name = "wasmer_emscripten",
     srcs = glob(["**/*.rs"]),
+    aliases = {
+    },
     crate_features = [
     ],
     crate_root = "src/lib.rs",
-    crate_type = "proc-macro",
+    crate_type = "lib",
     data = [],
     edition = "2018",
     rustc_flags = [
@@ -49,13 +51,20 @@ rust_library(
     version = "2.0.0",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__proc_macro2__1_0_26//:proc_macro2",
-        "@proxy_wasm_cpp_host__proc_macro_error__1_0_4//:proc_macro_error",
-        "@proxy_wasm_cpp_host__quote__1_0_9//:quote",
-        "@proxy_wasm_cpp_host__syn__1_0_72//:syn",
-    ],
+        "@proxy_wasm_cpp_host__byteorder__1_4_3//:byteorder",
+        "@proxy_wasm_cpp_host__lazy_static__1_4_0//:lazy_static",
+        "@proxy_wasm_cpp_host__libc__0_2_94//:libc",
+        "@proxy_wasm_cpp_host__log__0_4_14//:log",
+        "@proxy_wasm_cpp_host__time__0_1_43//:time",
+        "@proxy_wasm_cpp_host__wasmer__2_0_0//:wasmer",
+    ] + selects.with_or({
+        # cfg(windows)
+        (
+            "@rules_rust//rust/platform:i686-pc-windows-msvc",
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+        ): [
+            "@proxy_wasm_cpp_host__getrandom__0_2_2//:getrandom",
+        ],
+        "//conditions:default": [],
+    }),
 )
-
-# Unsupported target "basic" with type "test" omitted
-
-# Unsupported target "compiletest" with type "test" omitted

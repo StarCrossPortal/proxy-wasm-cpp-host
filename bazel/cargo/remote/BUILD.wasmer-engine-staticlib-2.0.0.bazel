@@ -31,12 +31,12 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "wasmer_derive",
+    name = "wasmer_engine_staticlib",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
     crate_root = "src/lib.rs",
-    crate_type = "proc-macro",
+    crate_type = "lib",
     data = [],
     edition = "2018",
     rustc_flags = [
@@ -49,13 +49,18 @@ rust_library(
     version = "2.0.0",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__proc_macro2__1_0_26//:proc_macro2",
-        "@proxy_wasm_cpp_host__proc_macro_error__1_0_4//:proc_macro_error",
-        "@proxy_wasm_cpp_host__quote__1_0_9//:quote",
-        "@proxy_wasm_cpp_host__syn__1_0_72//:syn",
+        "@proxy_wasm_cpp_host__bincode__1_3_3//:bincode",
+        "@proxy_wasm_cpp_host__cfg_if__1_0_0//:cfg_if",
+        "@proxy_wasm_cpp_host__leb128__0_2_4//:leb128",
+        "@proxy_wasm_cpp_host__libloading__0_7_0//:libloading",
+        "@proxy_wasm_cpp_host__loupe__0_1_3//:loupe",
+        "@proxy_wasm_cpp_host__serde__1_0_126//:serde",
+        "@proxy_wasm_cpp_host__tempfile__3_2_0//:tempfile",
+        "@proxy_wasm_cpp_host__tracing__0_1_26//:tracing",
+        "@proxy_wasm_cpp_host__wasmer_compiler__2_0_0//:wasmer_compiler",
+        "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
+        "@proxy_wasm_cpp_host__wasmer_object__2_0_0//:wasmer_object",
+        "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
+        "@proxy_wasm_cpp_host__wasmer_vm__2_0_0//:wasmer_vm",
     ],
 )
-
-# Unsupported target "basic" with type "test" omitted
-
-# Unsupported target "compiletest" with type "test" omitted
