@@ -130,6 +130,15 @@ alias(
 )
 
 alias(
+    name = "wasmer_engine",
+    actual = "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "wasmer_engine_universal",
     actual = "@proxy_wasm_cpp_host__wasmer_engine_universal__2_0_0//:wasmer_engine_universal",
     tags = [
