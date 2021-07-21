@@ -44,7 +44,7 @@ rust_library(
         "translator",
         "wasmparser",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/compiler/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",

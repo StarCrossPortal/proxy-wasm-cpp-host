@@ -38,7 +38,7 @@ rust_library(
     crate_features = [
         "compiler",
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/engine-universal/src/lib.rs",
     crate_type = "lib",
     data = [],
     edition = "2018",

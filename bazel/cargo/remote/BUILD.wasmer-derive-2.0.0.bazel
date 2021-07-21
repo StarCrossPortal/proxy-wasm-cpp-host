@@ -35,7 +35,7 @@ rust_library(
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "lib/derive/src/lib.rs",
     crate_type = "proc-macro",
     data = [],
     edition = "2018",
