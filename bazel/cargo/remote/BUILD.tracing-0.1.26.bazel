@@ -42,7 +42,6 @@ rust_library(
     crate_features = [
         "attributes",
         "default",
-        "log",
         "std",
         "tracing-attributes",
     ],
@@ -64,7 +63,6 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         "@proxy_wasm_cpp_host__cfg_if__1_0_0//:cfg_if",
-        "@proxy_wasm_cpp_host__log__0_4_14//:log",
         "@proxy_wasm_cpp_host__pin_project_lite__0_2_7//:pin_project_lite",
         "@proxy_wasm_cpp_host__tracing_core__0_1_18//:tracing_core",
     ] + selects.with_or({

@@ -121,15 +121,6 @@ alias(
 )
 
 alias(
-    name = "wasmer_compiler_cranelift",
-    actual = "@proxy_wasm_cpp_host__wasmer_compiler_cranelift__2_0_0//:wasmer_compiler_cranelift",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
     name = "wasmer_compiler_llvm",
     actual = "@proxy_wasm_cpp_host__wasmer_compiler_llvm__2_0_0//:wasmer_compiler_llvm",
     tags = [
@@ -139,44 +130,8 @@ alias(
 )
 
 alias(
-    name = "wasmer_compiler_singlepass",
-    actual = "@proxy_wasm_cpp_host__wasmer_compiler_singlepass__2_0_0//:wasmer_compiler_singlepass",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
-    name = "wasmer_emscripten",
-    actual = "@proxy_wasm_cpp_host__wasmer_emscripten__2_0_0//:wasmer_emscripten",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
     name = "wasmer_engine",
     actual = "@proxy_wasm_cpp_host__wasmer_engine__2_0_0//:wasmer_engine",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
-    name = "wasmer_engine_dylib",
-    actual = "@proxy_wasm_cpp_host__wasmer_engine_dylib__2_0_0//:wasmer_engine_dylib",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
-    name = "wasmer_engine_staticlib",
-    actual = "@proxy_wasm_cpp_host__wasmer_engine_staticlib__2_0_0//:wasmer_engine_staticlib",
     tags = [
         "cargo-raze",
         "manual",
@@ -204,15 +159,6 @@ alias(
 alias(
     name = "wasmer_types",
     actual = "@proxy_wasm_cpp_host__wasmer_types__2_0_0//:wasmer_types",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
-alias(
-    name = "wasmer_wasi",
-    actual = "@proxy_wasm_cpp_host__wasmer_wasi__2_0_0//:wasmer_wasi",
     tags = [
         "cargo-raze",
         "manual",
