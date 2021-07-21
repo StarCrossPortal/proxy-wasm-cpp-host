@@ -17,7 +17,6 @@ wasmsign = { git = "https://github.com/jedisct1/wasmsign", revision = "fa4d5598f
 #wasmer
 wasmer-api = { version = "2.0.0", default-features = false, package = "wasmer" }
 wasmer-compiler-llvm = "2.0.0"
-wasmer-engine = "2.0.0"
 wasmer-engine-universal = "2.0.0"
 wasmer-middlewares = "2.0.0"
 wasmer-types = "2.0.0"
