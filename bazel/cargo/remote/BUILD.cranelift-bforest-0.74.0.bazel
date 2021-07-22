@@ -25,13 +25,13 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # Apache-2.0 from expression "Apache-2.0 OR MIT"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
 
 rust_library(
-    name = "lock_api",
+    name = "cranelift_bforest",
     srcs = glob(["**/*.rs"]),
     crate_features = [
     ],
@@ -46,9 +46,9 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.4.4",
+    version = "0.74.0",
     # buildifier: leave-alone
     deps = [
-        "@proxy_wasm_cpp_host__scopeguard__1_1_0//:scopeguard",
+        "@proxy_wasm_cpp_host__cranelift_entity__0_74_0//:cranelift_entity",
     ],
 )
