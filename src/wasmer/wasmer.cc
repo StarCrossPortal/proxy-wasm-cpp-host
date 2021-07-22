@@ -134,8 +134,9 @@ bool Wasmer::load(std::string_view bytecode, std::string_view,
 std::unique_ptr<WasmVm> Wasmer::clone() {
   // TODO
   assert(false);
+  
   // assert(shared_module_ != nullptr);
-  // auto clone = std::make_unique<Wasmer>();
+  auto clone = std::make_unique<Wasmer>();
 
   // clone->integration().reset(integration()->clone());
   // clone->store_ = wasm_store_new(engine());
