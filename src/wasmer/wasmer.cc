@@ -54,7 +54,7 @@ public:
 
   std::string_view runtime() override { return "wasmer"; }
   Cloneable cloneable() override {
-    return false;
+    return Cloneable::NotCloneable;
     // return Cloneable::CompiledBytecode;
   }
   std::string_view getPrecompiledSectionName() override { return ""; }
