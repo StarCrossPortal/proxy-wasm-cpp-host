@@ -53,7 +53,10 @@ public:
   Wasmer() {}
 
   std::string_view runtime() override { return "wasmer"; }
-  Cloneable cloneable() override { return Cloneable::CompiledBytecode; }
+  Cloneable cloneable() override {
+    return false;
+    // return Cloneable::CompiledBytecode;
+  }
   std::string_view getPrecompiledSectionName() override { return ""; }
 
   bool load(std::string_view bytecode, std::string_view precompiled,
@@ -121,19 +124,22 @@ bool Wasmer::load(std::string_view bytecode, std::string_view,
     return false;
   }
 
-  shared_module_ = wasm_module_share(module_.get());
-  assert(shared_module_ != nullptr);
+  // TODO
+  // shared_module_ = wasm_module_share(module_.get());
+  // assert(shared_module_ != nullptr);
 
   return true;
 }
 
 std::unique_ptr<WasmVm> Wasmer::clone() {
-  assert(shared_module_ != nullptr);
-  auto clone = std::make_unique<Wasmer>();
+  // TODO
+  assert(false);
+  // assert(shared_module_ != nullptr);
+  // auto clone = std::make_unique<Wasmer>();
 
-  clone->integration().reset(integration()->clone());
-  clone->store_ = wasm_store_new(engine());
-  clone->module_ = wasm_module_obtain(clone->store_.get(), shared_module_.get());
+  // clone->integration().reset(integration()->clone());
+  // clone->store_ = wasm_store_new(engine());
+  // clone->module_ = wasm_module_obtain(clone->store_.get(), shared_module_.get());
 
   return clone;
 }
